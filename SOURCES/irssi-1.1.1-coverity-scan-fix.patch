@@ -1,0 +1,12 @@
+diff --git a/src/irc/dcc/dcc-send.c b/src/irc/dcc/dcc-send.c
+index 912129b..5000928 100644
+--- a/src/irc/dcc/dcc-send.c
++++ b/src/irc/dcc/dcc-send.c
+@@ -425,6 +425,7 @@ static int dcc_send_one_file(int queue, const char *target, const char *fname,
+ 	g_free(str);
+ 	if (dcc == NULL) {
+ 		g_warn_if_reached();
++		close(hfile);
+ 		return FALSE;
+ 	}
+ 
